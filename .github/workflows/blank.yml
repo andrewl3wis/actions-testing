@@ -34,10 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      - name: sleep for a bit
+        run: |
+          sleep 5000
 
       - name: Get Logs
         run: | 
-              curl --request GET \
+              curl -L --request GET \
               -H "Accept: application/vnd.github.v3+json" \
               --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
               --header 'content-type: application/json' \
